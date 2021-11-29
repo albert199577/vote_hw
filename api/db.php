@@ -1,5 +1,5 @@
 <?php
-    $dsn = "mysql:host=127.0.0.1;charset=utf8;dbname=students";
+    $dsn = "mysql:host=127.0.0.1;charset=utf8;dbname=topics";
     $pdo = new PDO($dsn, 'root', '');
 
 
@@ -24,16 +24,27 @@
         $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
         return $rows;
     }
-
+    
 
 //Find function
-
+//取得符合條件的資料
     function find($table, $id) {
         global $pdo;
-        $sql = "SELECT * FROM `$table` WHERE `id` = '$id'";
+        $sql = "SELECT * FROM `$table` WHERE ";
+        if (is_array($id)) {
+            foreach ($id as $key => $value) {
+                $tmp[] = "`$key` = '$value'";
+            }
+            $sql = $sql . implode(" AND ", $tmp);
+        } else {
+            $sql = $sql . "`id` = '$id'";
+        }
+        
         $rows = $pdo -> query($sql) -> fetch(PDO::FETCH_ASSOC);
         return $rows;
     }
+
+    // find('students', ['account' => 'mack', 'password' => '1254']);
 
     // echo "<pre>";
     // print_r(find('students', 3));
@@ -67,7 +78,7 @@
     // echo mb_substr($sql, 0, mb_strlen($sql) - 5);
 
 //Find function
-update('students', $arr1, $where);
+// update('students', $arr1, $where);
     function update($table, $arr1, $where) {
         global $pdo;
         $sql_set = "";
@@ -75,9 +86,9 @@ update('students', $arr1, $where);
             $sql_set = $sql_set . "`$key` = '$value',";
         }   
         $sql_set = trim($sql_set, ',');
-        echo $sql_set;
-        echo "<br>";
-        $sql_where = "";
+        // echo $sql_set;
+        // echo "<br>";
+        $sql_where ="";
         foreach($where as $key => $value) {
             $sql_where = $sql_where . "`$key` = '$value' AND ";
         }   
@@ -124,7 +135,7 @@ function insert($table, ...$arg) {
 
 <?php
 // Delete function
-del('students', ['name' => '劉銘'],[ 'birthday' => '2000-03-09']);
+// del('students', ['name' => '劉銘'],[ 'birthday' => '2000-03-09']);
     function del($table, ...$arg) {
         global $pdo; 
         $sql_where = "";
@@ -144,3 +155,47 @@ del('students', ['name' => '劉銘'],[ 'birthday' => '2000-03-09']);
         $pdo -> exec($sql);
     }
 ?>
+<?php
+function dd($array) {
+    echo "<pre>";
+    print_r($array);
+    echo "</pre>";
+}
+
+
+?>
+
+<?php
+
+function rows($table, $arr) {
+    global $pdo;
+    $sql = "SELECT count(*) FROM `$table` WHERE ";
+    foreach ($arr as $key => $value) {
+        $tmp[] = "`$key` = '$value'";
+    }
+    $sql = $sql . implode(" AND ", $tmp);
+    $rows = $pdo->query($sql)->fetchColumn();
+    return $rows;
+}
+
+// echo rows('options', ['topic_id' => 0])
+
+
+?>
+
+<?php
+//header method
+function to($url) {
+    header("location:$url");
+}
+
+?>
+
+<?php
+//任意查詢
+function q($sql) {
+    global $pdo;
+    return $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
+
+}
+
