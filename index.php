@@ -9,24 +9,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-    <div class="jumbotron m-0 p-0" style="overflow: hidden; height: 250px">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner position-relative">
-                <div class="carousel-item active position-absolute">
-                    <img src="./img/dessert-01.jpg" class="d-block w-100 h-25" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="./img/dessert-02.jpg" class="d-block w-100 h-25" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="./img/dessert-03.jpg" class="d-block w-100 h-25" alt="Third slide">
+    <a href="index.php">
+        <div class="jumbotron m-0 p-0" style="overflow: hidden; height: 250px">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner position-relative">
+                    <div class="carousel-item active position-absolute">
+                        <img src="./img/dessert-01.jpg" class="d-block w-100 h-25" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/dessert-02.jpg" class="d-block w-100 h-25" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/dessert-03.jpg" class="d-block w-100 h-25" alt="Third slide">
+                    </div>
                 </div>
             </div>
+            <div class="container">
+                
+            </div>
         </div>
-        <div class="container">
-            
-        </div>
-    </div>
+    </a>
     <?php
     $do = isset($_GET['do']) ? $_GET['do'] : 'show_vote_list';
     $file ="./frontend/" . $do . ".php";

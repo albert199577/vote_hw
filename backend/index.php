@@ -1,3 +1,4 @@
+<?php include_once "../api/db.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,28 +9,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
+    <a href="index.php">
+        <div class="jumbotron m-0 p-0" style="overflow: hidden; height: 250px">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner position-relative">
+                    <div class="carousel-item active position-absolute">
+                        <img src="./img/dessert-01.jpg" class="d-block w-100 h-25" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/dessert-02.jpg" class="d-block w-100 h-25" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/dessert-03.jpg" class="d-block w-100 h-25" alt="Third slide">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                
+            </div>
         </div>
-        <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-        </div>
-    </div>
-    </div>
+    </a>
+    <div class="container">
     <?php
-    $do = isset($_GET['do']) ? $_GET['do'] : './frontend/login';
-    $file = $do . "php";
+    $do = isset($_GET['do']) ? $_GET['do'] : 'manage_vote';
+    $file =$do . ".php";
     if (file_exists($file)) {
         include $file;
     } else {
-        include "./frontend/login.php";
+        include "manage_vote.php";
     }
     ?>
+    </div>
     <div class="p-5 text-center text-light bg-primary fixed-bottom">
         版權所有，歡迎盜用
     </div>

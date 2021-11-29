@@ -129,7 +129,7 @@ function insert($table, ...$arg)
 
 <?php
 // Delete function
-del('students', ['name' => '劉銘'], ['birthday' => '2000-03-09']);
+// del('students', ['name' => '劉銘'], ['birthday' => '2000-03-09']);
 function del($table, ...$arg)
 {
     global $pdo;
