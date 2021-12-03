@@ -79,14 +79,15 @@ if (!isset($_SESSION['user'])) {
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
         <?php
-        $img = ['dessert-01.jpg', 'dessert-02.jpg', 'dessert-03.jpg'];
+        // $img = ['dessert-01.jpg', 'dessert-02.jpg', 'dessert-03.jpg'];
+        $img = all('ad', ['sh' => 1]);
         foreach ($img as $key => $value) {
             if ($key == 0) {
                 echo "<div class='carousel-item active'>";
             } else {
                 echo "<div class='carousel-item'>";
             }
-            echo "<img src='../img/{$value}' class='d-block w-100' alt='...'>";
+            echo "<img src='../img/{$value['name']}' class='d-block w-100' alt='{$value['intro']}'>";
             echo "</div>";
         }
         ?>

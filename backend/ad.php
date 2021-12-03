@@ -35,16 +35,21 @@
                     echo "</td>";
                     echo "<td>{$row['intro']}</td>";
                     echo "<td>";
+                    echo "<a href='../api/change_status.php?id={$row['id']}'>";
                     echo ($row['sh'] == 1) ? "顯示中" : "下架中";
                     echo "</td>";
+                    echo "</a>";
                     echo "<td>";
                     echo "<button>修改</button>";
                     echo "</td>";
                     echo "<td>";
+                    echo "<a href='?do=edit_ad&id={$row['id']}'>";
                     echo "<button>重新上傳</button>";
                     echo "</td>";
                     echo "<td>";
+                    echo "<a href='../api/del_ad.php?id={$row['id']}'>";
                     echo "<button>刪除</button>";
+                    echo "</a>";
                     echo "</td>";
                     echo "</tr>";
                 }

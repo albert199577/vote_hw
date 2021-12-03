@@ -57,15 +57,19 @@
         <div class="jumbotron m-0 p-0" style="overflow: hidden; height: 250px">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./img/dessert-04.jpg" class="d-block w-100 h-25" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/dessert-02.jpg" class="d-block w-100 h-25" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/dessert-03.jpg" class="d-block w-100 h-25" alt="Third slide">
-                    </div>
+        <?php
+        // $img = ['dessert-01.jpg', 'dessert-02.jpg', 'dessert-03.jpg'];
+        $img = all('ad', ['sh' => 1]);
+        foreach ($img as $key => $value) {
+            if ($key == 0) {
+                echo "<div class='carousel-item active'>";
+            } else {
+                echo "<div class='carousel-item'>";
+            }
+            echo "<img src='./img/{$value['name']}' class='d-block w-100' title='{$value['intro']}'>";
+            echo "</div>";
+        }
+        ?>
                 </div>
             </div>
         </div>
