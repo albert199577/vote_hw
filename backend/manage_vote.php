@@ -26,7 +26,7 @@ foreach ($subject as $key => $value) {
 }
 
 ?>
-<a class="row justify-content-center m-5" href="">
+<a class="row justify-content-center m-5" href="?do=add_subject_form">
     <button type='button' class='btn btn-secondary'><i class='fas fa-plus'></i></button>
 </a>
 
