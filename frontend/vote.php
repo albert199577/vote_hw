@@ -13,18 +13,19 @@ $options = all('options', ['topic_id' => $id]);
 ?>
 
 <h1><?=$subject['topic'];?></h1>
-
+<ol class="list-group">
 <form action="./api/save_vote.php?<?=$id?>" method="post">
     <ul>
     <?php
     foreach ($options as $key => $opt) {
-        echo "<li>";
+        echo "<label class='list-group-item list-group-item-action list-group-item-info'>";
         echo "<input type='radio' name='opt' value='{$opt['id']}'>";
         echo $opt['opt'];
-        echo "</li>";
+        echo "</label>";
     }
     ?>
 
     </ul>
-    <input type="submit" value="送出">
+    <input class="btn btn-info mt-3" type="submit" value="投票">
+</ol>
 </form>

@@ -9,39 +9,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-    <a href="index.php">
-        <div class="jumbotron m-0 p-0" style="overflow: hidden; height: 250px">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner position-relative">
-                    <div class="carousel-item active position-absolute">
-                        <img src="./img/dessert-04.jpg" class="d-block w-100 h-25" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/dessert-02.jpg" class="d-block w-100 h-25" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./img/dessert-03.jpg" class="d-block w-100 h-25" alt="Third slide">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                
-            </div>
-        </div>
-    </a>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">投票</a>
-
+    <a class="navbar-brand" href="index.php">HOME</a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">TAB <span class="sr-only">(current)</span></a>
             </li>
     <?php
         if (isset($_SESSION['error'])) {
@@ -52,6 +28,9 @@
         if (isset($_SESSION['user'])) {
             echo "<li class='nav-item'>";
                 echo "<a class='nav-link'>{$_SESSION['user']}</a>";
+            echo "</li>";
+            echo "<li class='nav-item'>";
+            echo    "<a class='nav-link' href=''>會員中心</a>";
             echo "</li>";
             echo "<li class='nav-item'>";
             echo    "<a class='nav-link' href='logout.php'>登出</a>";
@@ -74,6 +53,23 @@
         </form>
     </div>
     </nav>
+    <a href="index.php">
+        <div class="jumbotron m-0 p-0" style="overflow: hidden; height: 250px">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./img/dessert-04.jpg" class="d-block w-100 h-25" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/dessert-02.jpg" class="d-block w-100 h-25" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/dessert-03.jpg" class="d-block w-100 h-25" alt="Third slide">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
     <?php
     $do = isset($_GET['do']) ? $_GET['do'] : 'show_vote_list';
     $file ="./frontend/" . $do . ".php";

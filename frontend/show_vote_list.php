@@ -8,7 +8,11 @@ foreach ($subject as $key => $value) {
     if (rows('options', ['topic_id' => $value['id']])) {
         echo "<li class='list-group-item'>";
         //question
-        echo "<a class='d-inline-block col-md-8' href='index.php?do=vote&id={$value['id']}'>" . $value['topic'] . "</a>";
+        if (isset($_SESSION['user'])) {
+            echo "<a class='d-inline-block col-md-8' href='index.php?do=vote&id={$value['id']}'>" . $value['topic'] . "</a>";
+        } else {
+            echo "<span class='d-inline-block col-md-2 text-center'>" . $value['topic']  . "</span>";
+        }
         //總投票顯示
         $count = q("select sum(`count`) as '總計' from `options` where `topic_id` = '{$value['id']}'");
         // dd($count);
