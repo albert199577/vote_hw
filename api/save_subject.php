@@ -1,5 +1,5 @@
 <?php
-include_once "db teach.php";
+include_once "db.php";
 
 print_r($_POST);
 

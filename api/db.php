@@ -40,7 +40,7 @@
         } else {
             $sql = $sql . "`id` = '$id'";
         }
-        
+
         $rows = $pdo -> query($sql) -> fetch(PDO::FETCH_ASSOC);
         return $rows;
     }
@@ -97,8 +97,8 @@
         // echo $sql_where;
 
         mb_substr($sql_where, 0, mb_strlen($sql_where) - 5);
-        echo $sql_where;
-        echo "<br>";
+        // echo $sql_where;
+        // echo "<br>";
         $sql = "UPDATE `$table` SET $sql_set WHERE $sql_where ";
         echo $sql;
         $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
@@ -129,6 +129,7 @@ function insert($table, ...$arg) {
     }
     $sql = "INSERT INTO `$table`($sql_set) VALUES ($sql_where)";
     echo $sql;
+    echo "<br>";
     $pdo -> exec($sql);
 }
 

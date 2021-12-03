@@ -14,7 +14,7 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner position-relative">
                     <div class="carousel-item active position-absolute">
-                        <img src="./img/dessert-01.jpg" class="d-block w-100 h-25" alt="First slide">
+                        <img src="./img/dessert-04.jpg" class="d-block w-100 h-25" alt="First slide">
                     </div>
                     <div class="carousel-item">
                         <img src="./img/dessert-02.jpg" class="d-block w-100 h-25" alt="Second slide">
@@ -38,9 +38,10 @@
         include "./frontend/show_vote_list.php";
     }
     ?>
-    <div class="p-5 text-center text-light bg-primary fixed-bottom">
+    <!-- <div class="p-5 text-center text-light bg-primary fixed-bottom">
         版權所有，歡迎盜用
-    </div>
+    </div> -->
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
