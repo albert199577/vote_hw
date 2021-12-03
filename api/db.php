@@ -1,7 +1,7 @@
 <?php
     $dsn = "mysql:host=127.0.0.1;charset=utf8;dbname=topics";
     $pdo = new PDO($dsn, 'root', '');
-
+    session_start();
 
 //ALL function
         

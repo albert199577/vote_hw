@@ -24,12 +24,10 @@ foreach ($subject as $key => $value) {
     echo "</a>";
     echo "</li>";
 }
-echo "</ol>";
-echo "<li class='p-0 list-group-item text-center'>";
-echo "<button type='submit' class='btn btn-secondary'><i class='fas fa-plus'></i></button>";
-echo "</li>";
-
 
 ?>
+<a class="row justify-content-center m-5" href="">
+    <button type='button' class='btn btn-secondary'><i class='fas fa-plus'></i></button>
+</a>
 
 
