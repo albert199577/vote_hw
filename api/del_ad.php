@@ -1,10 +1,11 @@
 <?php include_once "db.php";
 
-unlink("../img/" . $image['name']);
-
 $img = find('ad', $_GET['id']);
+unlink("../img/" . $img['name']);
 
-del('ad', [`id` => $_GET['id']]);
 
-// to("../backend/?do=ad");
+del('ad', ['id' => $_GET['id']]);
+
+to("../backend/?do=ad");
+
 ?>

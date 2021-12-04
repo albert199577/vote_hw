@@ -36,7 +36,7 @@
                     echo "<td>{$row['intro']}</td>";
                     echo "<td>";
                     echo "<a href='../api/change_status.php?id={$row['id']}'>";
-                    echo ($row['sh'] == 1) ? "顯示中" : "下架中";
+                    echo ($row['sh'] == 1) ? "展示中" : "下架中";
                     echo "</td>";
                     echo "</a>";
                     echo "<td>";
