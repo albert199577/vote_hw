@@ -17,7 +17,7 @@ foreach ($subject as $key => $value) {
         $count = q("select sum(`count`) as '總計' from `options` where `topic_id` = '{$value['id']}'");
         // dd($count);
         echo "<span class='d-inline-block col-md-2 text-center'>";
-        echo $count[0]['總計'];
+        echo "投票總次數 " . $count[0]['總計'];
         echo "</span>";
         //看結果按鈕
         echo "<a href='?do=vote_result&id={$value['id']}' class='d-inline-block col-md-2 text-center'>";

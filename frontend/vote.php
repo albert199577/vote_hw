@@ -19,7 +19,7 @@ $options = all('options', ['topic_id' => $id]);
     <?php
     foreach ($options as $key => $opt) {
         echo "<label class='list-group-item list-group-item-action list-group-item-info'>";
-        echo "<input type='radio' name='opt' value='{$opt['id']}'>";
+        echo "<input type='radio' name='opt' value='{$opt['id']}' required>";
         echo $opt['opt'];
         echo "</label>";
     }

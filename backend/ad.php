@@ -1,4 +1,4 @@
-<h2 class="text-center font-wegth-bold">倫波圖管理</h2>
+<h2 class="text-center font-weight-bold">倫波圖管理</h2>
 
 <div class="container">
     <div class="row">

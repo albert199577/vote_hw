@@ -50,9 +50,6 @@ if (!isset($_SESSION['user'])) {
                 echo "<a class='nav-link'>{$_SESSION['user']}</a>";
             echo "</li>";
             echo "<li class='nav-item'>";
-            echo    "<a class='nav-link' href=''>會員中心</a>";
-            echo "</li>";
-            echo "<li class='nav-item'>";
             echo    "<a class='nav-link' href='../logout.php'>登出</a>";
             echo "</li>";
         } else {
@@ -67,10 +64,7 @@ if (!isset($_SESSION['user'])) {
         }
     ?>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        
     </div>
     </nav>
 <body>
