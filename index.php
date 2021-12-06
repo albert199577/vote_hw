@@ -8,6 +8,7 @@
     <title>問卷系統</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/style.css">
     <style>
         * {
             /* border: 1px solid #000; */
@@ -15,45 +16,45 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <p>2324</p>
+    <div class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <a class="navbar-brand" href="index.php">HOME</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <form class="form-inline my-2 my-lg-0" action="./api/search.php">
+                    <input class="form-control mr-sm-2" type="search" placeholder="尋找投票" aria-label="Search" name="keyword">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            <?php
+            if (isset($_SESSION['user'])) {
+                echo "<li class='nav-item '>";
+                    echo "<a class='nav-link'>{$_SESSION['user']}</a>";
+                echo "</li>";
+                echo "<li class='nav-item'>";
+                echo    "<a class='nav-link' href=''>會員中心</a>";
+                echo "</li>";
+                echo "<li class='nav-item'>";
+                echo    "<a class='nav-link' href='logout.php'>登出</a>";
+                echo "</li>";
+            } else {
+            ?>
+                <li class="nav-item">
+                    <a class="nav-link ml-3 px-3" href="?do=login" style="border: 1px solid #666; border-radius: 20px;">登入</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-3 px-3" href="?do=reg"  style="border: 1px solid #666; border-radius: 20px;">註冊</a>
+                </li>
+        <?php
+            }
+        ?>
+            </ul>
+        </div>
+        </nav>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    <a class="navbar-brand" href="index.php">HOME</a>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <form class="form-inline my-2 my-lg-0" action="./api/search.php">
-                <input class="form-control mr-sm-2" type="search" placeholder="尋找投票" aria-label="Search" name="keyword">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            </form>
-    <?php
-        if (isset($_SESSION['user'])) {
-            echo "<li class='nav-item'>";
-                echo "<a class='nav-link'>{$_SESSION['user']}</a>";
-            echo "</li>";
-            echo "<li class='nav-item'>";
-            echo    "<a class='nav-link' href=''>會員中心</a>";
-            echo "</li>";
-            echo "<li class='nav-item'>";
-            echo    "<a class='nav-link' href='logout.php'>登出</a>";
-            echo "</li>";
-        } else {
-    ?>
-            <li class="nav-item">
-                <a class="nav-link ml-3 px-3" href="?do=login" style="border: 1px solid #666; border-radius: 20px;">登入</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mx-3 px-3" href="?do=reg"  style="border: 1px solid #666; border-radius: 20px;">註冊</a>
-            </li>
-    <?php
-        }
-    ?>
-        </ul>
-    </div>
-    </nav>
+
     <a href="index.php">
         <div class="jumbotron m-0 p-0" style="overflow: hidden; height: 250px">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -84,6 +85,37 @@
         include "./frontend/show_vote_list.php";
     }
     ?>
+    <footer> 
+        <div class="logo"><img src="/Icons/black logo.svg" alt="vote_img">
+            <h4>全民公投</h4>
+        </div>
+        <ul class="about">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About </a>
+            </li>
+            <li>
+                <a href="#">Login</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <img src="./icon/facebook.svg" alt="facebook">
+            </li>
+            <li>
+                <img src="./icon/instagram.svg" alt="instagram">
+            </li>
+            <li>
+                <img src="./icon/twitter.svg" alt="twitter">
+            </li>
+            <li>
+                <img src="./icon/youtube.svg" alt="youtube">
+            </li>
+        </ul>
+    </footer>
     <!-- <div class="p-5 text-center text-light bg-primary fixed-bottom">
         版權所有，歡迎盜用
     </div> -->
