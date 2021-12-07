@@ -61,6 +61,10 @@ footer .logo {
   margin: 1rem 0;
 }
 
+footer .logo img {
+  height: 2rem;
+}
+
 footer .logo h4 {
   font-size: 1.1rem;
 }

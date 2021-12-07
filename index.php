@@ -86,8 +86,9 @@
     }
     ?>
     <footer> 
-        <div class="logo"><img src="/Icons/black logo.svg" alt="vote_img">
-            <h4>全民公投</h4>
+        <div class="logo">
+            <img src="./icon/logo.svg" alt="vote_img">
+            <h4></h4>
         </div>
         <ul class="about">
             <li>
