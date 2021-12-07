@@ -45,6 +45,7 @@
         return $rows;
     }
 //取得符合類似條件的資料
+
     function find_like($table, $topic) {
         global $pdo;
         $sql = "SELECT * FROM `$table` WHERE ";
@@ -54,8 +55,8 @@
             }
             $sql = $sql . $tmp;
         }
-        echo $sql;
-        $rows = $pdo -> query($sql) -> fetch(PDO::FETCH_ASSOC);
+        // echo $sql;
+        $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
         return $rows;
     }
 

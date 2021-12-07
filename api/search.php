@@ -2,8 +2,6 @@
 
 $keyword = $_GET['keyword'];
 
-find_like('topics', ['topic' => $keyword]);
-
 to("../index.php?keyword=$keyword");
 ?>
 

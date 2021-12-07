@@ -12,7 +12,7 @@ foreach ($subject as $key => $value) {
     $count = q("select sum(`count`) as '總計' from `options` where `topic_id` = '{$value['id']}'");
     //總投票顯示
     echo "<span class='d-inline-block col-md-2 text-center'>";
-    echo $count[0]['總計'];
+    echo "總投票數 " . $count[0]['總計'];
     echo "</span>";
     // 管理題目
     echo "<a href='?do=edit_subject&id={$value['id']}' class='d-inline-block col-md-2 text-center'>";

@@ -4,12 +4,18 @@
 <div class="container vote-list">
     <ul class='list-grid p-0 '>
 <?php
-$subject = all('topics'); 
+$subject = all('topics');
+$keyword = $_GET['keyword'];
+if (isset($keyword)) {
+    $find_like = find_like('topics', ['topic' => $keyword]);
+    $subject = $find_like;
+}
+
 foreach ($subject as $key => $value) {
     if (rows('options', ['topic_id' => $value['id']])) {
         echo "<li class='vote-box row flex-column text-center'>";
         //question
-        echo "<img src='./icon/youtube.svg' height='30%'>";
+        echo "<img src='./icon/youtube.svg' height='50%'>";
         if (isset($_SESSION['user'])) {
             echo "<a class='d-inline-block' href='index.php?do=vote&id={$value['id']}'>" . $value['topic'] . "</a>";
         } else {
