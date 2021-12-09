@@ -10,7 +10,12 @@ if (isset($keyword)) {
     $find_like = find_like('topics', ['topic' => $keyword]);
     $subject = $find_like;
 }
-
+if (count($subject) == 0) {
+    echo "<li class='mt-5' style='list-style: none; text-align: center'>";
+    echo "<i class='fas fa-exclamation-triangle' style='font-size: 3rem;color: #dd2925;'></i>";
+    echo "<h2 class='m-5'>目前暫無資料</h2>";
+    echo "</li>";
+}
 foreach ($subject as $key => $value) {
     if (rows('options', ['topic_id' => $value['id']])) {
         echo "<li class='vote-box row flex-column text-center'>";

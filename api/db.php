@@ -73,13 +73,13 @@
     3. 指定更新條件
     */
 
-    $arr1 = ['name' => '劉銘',
-            'birthday' => '2000-03-09',
-            'parent' => '許延安',
-            ];
-    $where = ['major' => '商業經營科'
+    // $arr1 = ['name' => '劉銘',
+    //         'birthday' => '2000-03-09',
+    //         'parent' => '許延安',
+    //         ];
+    // $where = ['major' => '商業經營科'
     
-            ];
+    //         ];
 
 
     // $sql = "";
@@ -95,6 +95,7 @@
 
 //Find function
 // update('students', $arr1, $where);
+// UPDATE `users` SET `id`='[value-1]',`account`='[value-2]' WHERE 
     function update($table, $arr1, $where) {
         global $pdo;
         $sql_set = "";
@@ -119,6 +120,8 @@
         $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
         return $rows;
         $pdo -> exec($sql);
+        //
+        
     }
 ?>
 

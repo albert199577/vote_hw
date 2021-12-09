@@ -1,38 +1,56 @@
-<section class="container">
-    <h1 class="text-center mt-3">填寫註冊資料</h1>
-    <form class="text-center mt-5 row justify-content-center flex-column" action="./api/reg.php" method="post" id="regForm">
-        <li class="row justify-content-center align-items-center">
-            <label class="col-md-2 col-3 my-0" for="">姓名</label>
-            <input class="col-md-3 col-7" type="text" name="name" required>
-        </li>
-        <li class="row justify-content-center align-items-center">
-            <label class="col-md-2 col-3 my-0" for="">電話</label>
-            <input class="col-md-3 col-7" type="text" name="mobile" required>
-        </li>
-        <li class="row justify-content-center align-items-center">
-            <label class="col-md-2 col-3 my-0" for="">帳號</label>
-            <input class="col-md-3 col-7" type="text" name="account" required>
-        </li>
-        <li class="row justify-content-center align-items-center">
-            <label class="col-md-2 col-3 my-0" for="">密碼</label>
-            <input class="col-md-3 col-7" type="password" name="password" required>
-        </li>
-        <li class="row justify-content-center align-items-center">
-            <label class="col-md-2 col-3 my-0" for="">E-mail:</label>
-            <input class="col-md-3 col-7" type="email" name="email" required>
-        </li>
-        <li class="row justify-content-center align-items-center">
-            <label class="col-md-2 col-3 my-0" for="">生日</label>
-            <input class="col-md-3 col-7 text-center" type="date" name="birthday" required>
-        </li>
-        <li class="row justify-content-center align-items-center">
-            <label class="col-md-2 col-3 my-0" for="">性別</label>
-            <select class="col-md-3 col-7 text-center" name="gender" id="" required>
-                <option value="">選擇性別</option>
-                <option value="男">男</option>
-                <option value="女">女</option>
-            </select>
-        </li>
-        <button type="submit" class="mx-auto btn btn-info mt-3">立即註冊</button>
-    </form>
-</section>
+<div class="container p-5">
+    <div class="mx-auto d-flex justify-content-center align-items-around" style="background-color: #054853; min-height:300px; border-radius: 20px;max-width: 500px;">
+        <form action="./api/reg.php" method="POST">
+        <h3 class="text-center m-5 text-white">填寫註冊資料</h3>
+            <ul class="p-0">
+                <div class="input-group my-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">帳號</div>
+                    </div>
+                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" name="account" required>
+                </div>
+                <div class="input-group my-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">密碼</div>
+                    </div>
+                    <input type="password" class="form-control" id="inlineFormInputGroupUsername" name="password" required>
+                </div>
+                <div class="input-group my-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">暱稱</div>
+                    </div>
+                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" name="name" required>
+                </div>
+                <div class="input-group my-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">性別</div>
+                    </div>
+                    <select class="form-control" name="gender" required>
+                        <option value=""></option>
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                </div>
+                <div class="input-group my-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">電話</div>
+                    </div>
+                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" name="mobile" required>
+                </div>
+                <div class="input-group my-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">生日</div>
+                    </div>
+                    <input type="date" class="form-control" id="inlineFormInputGroupUsername" name="birthday" required>
+                </div>
+                <div class="input-group my-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">E-mail</div>
+                    </div>
+                    <input type="email" class="form-control" id="inlineFormInputGroupUsername" name="email" required>
+                </div>
+            </ul>
+            <button class="mx-auto d-block my-5" type="submit">送出</button>
+        </form>
+    </div>
+</div>

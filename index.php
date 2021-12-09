@@ -18,23 +18,26 @@
 <body>
     <div class="bg-light">
         <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+            <a class="navbar-brand" href="index.php">
+                <img src="./icon/logo.svg" alt="vote_img" style="height: 3rem;">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <a class="navbar-brand" href="index.php">HOME</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <form class="form-inline my-2 my-lg-0" action="./api/search.php">
-                    <input class="form-control mr-sm-2" type="search" placeholder="尋找投票" aria-label="Search" name="keyword">
+                    <input class="form-control mr-sm-0" type="search" placeholder="尋找投票" aria-label="Search" name="keyword">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             <?php
+            $rows = find("users", ["account" => $_SESSION["user"]]);
             if (isset($_SESSION['user'])) {
                 echo "<li class='nav-item '>";
-                    echo "<a class='nav-link'>{$_SESSION['user']}</a>";
+                    echo "<a class='nav-link'>{$rows["name"]}</a>";
                 echo "</li>";
                 echo "<li class='nav-item'>";
-                echo    "<a class='nav-link' href=''>會員中心</a>";
+                echo    "<a class='nav-link' href='?do=edit_member_data'>會員中心</a>";
                 echo "</li>";
                 echo "<li class='nav-item'>";
                 echo    "<a class='nav-link' href='logout.php'>登出</a>";
@@ -42,10 +45,10 @@
             } else {
             ?>
                 <li class="nav-item">
-                    <a class="nav-link ml-3 px-3" href="?do=login" style="border: 1px solid #666; border-radius: 20px;">登入</a>
+                    <a class="nav-link ml-3 px-3 d-inline-block" href="?do=login" style="border: 1px solid #666; border-radius: 20px;">登入</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-3 px-3" href="?do=reg"  style="border: 1px solid #666; border-radius: 20px;">註冊</a>
+                    <a class="nav-link mx-3 px-3 d-inline-block" href="?do=reg"  style="border: 1px solid #666; border-radius: 20px;">註冊</a>
                 </li>
         <?php
             }
