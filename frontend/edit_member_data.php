@@ -50,6 +50,3 @@ $rows = find("users", ["account" => $_SESSION['user']]);
         </form>
     </div>
 </div>
-
-<?php
-

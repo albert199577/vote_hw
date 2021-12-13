@@ -3,10 +3,39 @@
           box-sizing: border-box;
 }
 
+@media (max-width: 1420px) {
+  .ad {
+    display: none;
+  }
+}
+
+.back-img {
+  color: white;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../img/backimage.jpeg");
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
 .vote-list {
   border-radius: 30px;
-  margin: 3rem auto;
-  padding: 2rem 1rem;
+  margin: 3rem 0;
+  padding: 2rem 0rem;
   -webkit-box-shadow: 0 0 30px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 30px 2px rgba(0, 0, 0, 0.1);
   min-height: 700px;
@@ -14,10 +43,13 @@
 
 .vote-list .vote-box {
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
+  border-radius: 5px;
   width: 250px;
   height: 300px;
-  padding: 3rem;
+}
+
+.vote-list .vote-box:hover {
+  border: 1px solid #1fb0ff;
 }
 
 .vote-list .list-grid {

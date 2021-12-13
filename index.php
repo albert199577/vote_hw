@@ -37,7 +37,10 @@
                     echo "<a class='nav-link'>{$rows["name"]}</a>";
                 echo "</li>";
                 echo "<li class='nav-item'>";
-                echo    "<a class='nav-link' href='?do=edit_member_data'>會員中心</a>";
+                echo    "<a class='nav-link' href='?do=manage_vote'>我的公投</a>";
+                echo "</li>";
+                echo "<li class='nav-item'>";
+                echo    "<a class='nav-link' href='?do=edit_member_data'>編輯會員資料</a>";
                 echo "</li>";
                 echo "<li class='nav-item'>";
                 echo    "<a class='nav-link' href='logout.php'>登出</a>";
@@ -57,28 +60,14 @@
         </div>
         </nav>
     </div>
-
-    <a href="index.php">
-        <div class="jumbotron m-0 p-0" style="overflow: hidden; height: 250px">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-        <?php
-        // $img = ['dessert-01.jpg', 'dessert-02.jpg', 'dessert-03.jpg'];
-        $img = all('ad', ['sh' => 1]);
-        foreach ($img as $key => $value) {
-            if ($key == 0) {
-                echo "<div class='carousel-item active'>";
-            } else {
-                echo "<div class='carousel-item'>";
-            }
-            echo "<img src='./img/{$value['name']}' class='d-block w-100' title='{$value['intro']}'>";
-            echo "</div>";
-        }
-        ?>
-                </div>
-            </div>
-        </div>
-    </a>
+    <!-- header -->
+    
+    <section class="back-img"> 
+        <h3>準備好製作第一個投票了嗎？</h3>
+        <a href="?do=add_vote">
+            <button class="start btn btn-outline-light mt-3">現在開始</button>
+        </a>
+    </section>
     <?php
     $do = isset($_GET['do']) ? $_GET['do'] : 'show_vote_list';
     $file ="./frontend/" . $do . ".php";
@@ -87,18 +76,17 @@
     } else {
         include "./frontend/show_vote_list.php";
     }
-    ?>
+    ?> 
     <footer> 
         <div class="logo">
             <img src="./icon/logo.svg" alt="vote_img">
-            <h4></h4>
         </div>
         <ul class="about">
             <li>
                 <a href="#">Home</a>
             </li>
             <li>
-                <a href="#">About </a>
+                <a href="#">About</a>
             </li>
             <li>
                 <a href="#">Login</a>

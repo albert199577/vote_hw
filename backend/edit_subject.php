@@ -1,4 +1,3 @@
-
 <?php 
 $subject = find('topics', $_GET['id']);
 $option = all('options', ['topic_id' => $_GET['id']]);
@@ -20,15 +19,6 @@ $option = all('options', ['topic_id' => $_GET['id']]);
         echo "<input type='hidden' name='opt_id[]' value='{$opt['id']}'>";
         echo "</label>";
     }
-    
-    // if(count($option) <= 4) {
-    //     for($i = 0; $i < (4 - count($option)); $i++) {
-    //         echo "<label class='list-group-item'>";
-    //         echo "選項" . (count($option) + 1 + $i);
-    //         echo "<input type='text' name='options[]' value=''>";
-    //         echo "</label>";
-    //     }
-    // }
     ?>
     <input type="submit" value="送出">
 </form>

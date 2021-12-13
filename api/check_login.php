@@ -13,6 +13,4 @@ if (rows('users', $_POST)) {
 }
 
 
-
-
 ?>
