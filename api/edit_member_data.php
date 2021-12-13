@@ -4,8 +4,7 @@
 print_r($_POST);
 echo $_SESSION["user"];
 if (isset($_POST)) {
-    update('users', $_POST, ['account' => $_SESSION['account']]); 
-    // $rows = find("users", ["account" => $account])
+    update('users', $_POST, ['account' => $_SESSION['user']]); 
 }
 to("../index.php");
 

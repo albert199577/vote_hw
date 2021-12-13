@@ -3,7 +3,6 @@ $subject = find('topics', $_GET['id']);
 $option = all('options', ['topic_id' => $_GET['id']]);
 
 
-
 ?>
 <form action="../api/edit_subject.php" method="post" class="col-6 m-auto text-center">
     <label>問卷主題: <input type="text" name="topic" value="<?=$subject['topic'];?>"></label>

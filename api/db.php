@@ -44,6 +44,21 @@
         $rows = $pdo -> query($sql) -> fetch(PDO::FETCH_ASSOC);
         return $rows;
     }
+//取得符合條件的資料 (管理我的投票)
+    function find_vote($table, $id) {
+        global $pdo;
+        $sql = "SELECT * FROM `$table` WHERE ";
+        if (is_array($id)) {
+            foreach ($id as $key => $value) {
+                $tmp[] = "`$key` = '$value'";
+            }
+            $sql = $sql . implode(" AND ", $tmp);
+        } else {
+            $sql = $sql . "`id` = '$id'";
+        }
+        $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
+        return $rows;
+    }
 //取得符合類似條件的資料
 
     function find_like($table, $topic) {
