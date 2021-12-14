@@ -1,6 +1,8 @@
 <?php
     $dsn = "mysql:host=127.0.0.1;charset=utf8;dbname=topics";
     $pdo = new PDO($dsn, 'root', '');
+    // $dsn = "mysql:host=127.0.0.1;charset=utf8;dbname=s1100405";
+    // $pdo = new PDO($dsn, 's1100405', 's1100405');
     session_start();
 
 //ALL function
@@ -111,26 +113,25 @@
 //Find function
 // update('students', $arr1, $where);
 // UPDATE `users` SET `id`='[value-1]',`account`='[value-2]' WHERE 
-    function update($table, $arr1, $where) {
+    function update($table, $data, $where) {
         global $pdo;
+        // $sql = "UPDATE `$table` SET "
         $sql_set = "";
-        foreach($arr1 as $key => $value) {
-            $sql_set = $sql_set . "`$key` = '$value',";
+        foreach($data as $key => $value) {
+            $data_tmp[] = "`$key` = '$value'";
         }   
-        $sql_set = trim($sql_set, ',');
-        // echo $sql_set;
-        // echo "<br>";
-        $sql_where ="";
-        foreach($where as $key => $value) {
-            $sql_where = $sql_where . "`$key` = '$value' AND ";
-        }   
-        $sql_where = mb_substr($sql_where, 0, mb_strlen($sql_where) - 5);
-        // echo $sql_where;
+        $sql_set .= implode(" , ", $data_tmp);
 
-        mb_substr($sql_where, 0, mb_strlen($sql_where) - 5);
+        $sql_where ="";
+        print_r($where);
+        foreach($where as $key => $value) {
+            $where_tmp[] = "`$key` = '$value'";
+
+        }   
+        $sql_where .= implode(" AND ", $where_tmp);
         // echo $sql_where;
         // echo "<br>";
-        $sql = "UPDATE `$table` SET $sql_set WHERE $sql_where ";
+        $sql = "UPDATE `$table` SET $sql_set WHERE $sql_where";
         echo $sql;
         $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
         return $rows;
@@ -232,4 +233,13 @@ function q($sql) {
     return $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
 
 }
+?>
 
+<?php
+//帳號及信箱驗證是否重複
+function check_rep($table, $where, $data) {
+    global $pdo;
+    $sql = "SELECT * FROM `$table` WHERE `$where` = '$data' LIMIT 1";
+    echo $sql;
+    return $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
+}
