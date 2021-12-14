@@ -1,5 +1,4 @@
 <!-- <h1>列出所有的問題</h1> -->
-<?php include_once "db.php"; ?>
 <link rel="stylesheet" href="./style/style.css">
 <main class="d-flex align-items-center flex-wrap justify-content-center" style="gap: 2rem">
     <section style="flex: 1 1;max-width: 100%; align-self: start;" class="p-5 ad">
@@ -26,8 +25,8 @@
             <ul class='list-grid p-0'>
         <?php
         $subject = all('topics');
-        $keyword = $_GET['keyword'];
         if (isset($keyword)) {
+            $keyword = $_GET['keyword'];
             $find_like = find_like('topics', ['topic' => $keyword]);
             $subject = $find_like;
         }
@@ -55,7 +54,9 @@
                 echo "投票總次數 " . $count[0]['總計'];
                 echo "</span>";
                 // 投票設計者
-                echo "<span> Design By " . $value['designer'] . "<span>";
+                echo "<span class='d-inline-block'> Design By ";
+                echo $value['designer'];
+                echo "</span>";
                 //看結果按鈕
                 echo "<a href='?do=vote_result&id={$value['id']}' class='d-inline-block text-center'>";
                 echo "<button class='btn btn-secondary'>觀看結果</button>";

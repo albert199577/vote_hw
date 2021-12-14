@@ -31,8 +31,8 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             <?php
-            $rows = find("users", ["account" => $_SESSION["user"]]);
             if (isset($_SESSION['user'])) {
+                $rows = find("users", ["account" => $_SESSION["user"]]);
                 echo "<li class='nav-item '>";
                     echo "<a class='nav-link'>{$rows["name"]}</a>";
                 echo "</li>";

@@ -136,7 +136,6 @@
         return $rows;
         $pdo -> exec($sql);
         //
-        
     }
 ?>
 
