@@ -3,6 +3,7 @@
 
 $rows = find("users", ["account" => $_SESSION["user"]]);
 $subject = find_vote('topics',['designer' => $rows["name"]]);
+$status = all("topics");
 
 echo "<ol class='p-0'>";
 foreach ($subject as $key => $value) {
@@ -17,8 +18,9 @@ foreach ($subject as $key => $value) {
     echo "</span>";
     //上下架
     echo "<a href='./api/change_vote_status.php?id={$value['id']};'>";
-    echo "<input type='submit' value='上架'>";
-    echo "</a>";
+    echo "<button type='button' class='btn btn-info'>";
+    echo ($value['status'] == 1) ? '下架' : '上架';
+    echo "</button>";
     // 管理題目
     echo "<a href='?do=edit_subject&id={$value['id']}' class='d-inline-block col-md-2 text-center'>";
     echo "<button class='btn btn-info'>管理</button>";

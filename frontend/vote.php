@@ -27,5 +27,8 @@ $options = all('options', ['topic_id' => $id]);
 
     </ul>
     <input class="btn btn-info mt-3" type="submit" value="投票">
+    <a href="index.php">
+        <button class="btn btn-info mt-3" type="button">回上一頁</button>
+    </a>
 </ol>
 </form>

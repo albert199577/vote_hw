@@ -24,7 +24,7 @@
         <div class="container vote-list">
             <ul class='list-grid p-0'>
         <?php
-        $subject = all('topics');
+        $subject = all('topics', ['status' => 1]);
         if (isset($keyword)) {
             $keyword = $_GET['keyword'];
             $find_like = find_like('topics', ['topic' => $keyword]);

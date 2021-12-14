@@ -20,14 +20,15 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light container">
             <a class="navbar-brand" href="index.php">
                 <img src="./icon/logo.svg" alt="vote_img" style="height: 3rem;">
+                <span class="mx-3">HOME</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <form class="form-inline my-2 my-lg-0" action="./api/search.php">
-                    <input class="form-control mr-sm-0" type="search" placeholder="尋找投票" aria-label="Search" name="keyword">
+                <form class="form-inline my-2 my-lg-0 flex-nowrap" action="./api/search.php">
+                    <input class="form-control mr-sm-0 d-inline-block" type="search" placeholder="尋找投票" aria-label="Search" name="keyword">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             <?php
@@ -64,7 +65,8 @@
     
     <section class="back-img"> 
         <h3>準備好製作第一個投票了嗎？</h3>
-        <a href="?do=add_vote">
+        
+        <a href="?do=<?=isset($_SESSION['user']) ? 'add_vote' : 'login';?>">
             <button class="start btn btn-outline-light mt-3">現在開始</button>
         </a>
     </section>
@@ -108,9 +110,6 @@
             </li>
         </ul>
     </footer>
-    <!-- <div class="p-5 text-center text-light bg-primary fixed-bottom">
-        版權所有，歡迎盜用
-    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
