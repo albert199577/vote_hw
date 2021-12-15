@@ -40,7 +40,7 @@
             echo "<p class='percent m-0 mr-3'>";
             echo $p . "%";
             echo "</p>";
-            echo "<div class='color position-absolute m-0' style='width:$percent; background-color: rgba(0, 0, 0, 0.1); height: 3rem;'></div>";
+            echo "<div class='color position-absolute m-0' style='width:$percent; background-color: rgba(175, 175, 175, .2); height: 3rem; transition: width 0.5s ease 0s;'></div>";
         echo "</div>";
         echo "<p class='badge badge-info m-0 d-inline-block' style='flex: '>";
         echo $row['count'] . "票";

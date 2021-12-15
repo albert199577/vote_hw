@@ -1,7 +1,5 @@
-<?php include_once "db.php"; ?>
-
 <?php 
-$users = all('users');
+$users = all('users');
 echo "<h2>目前會員</h2>";
 echo "<ol class='p-0'>";
 // echo "<pre>";

@@ -5,11 +5,11 @@
         <div class="col-md-3">
             <form action="../api/upload_ad.php" method="post" enctype="multipart/form-data">
                 <div class="text-center">
-                    <label for="upload">選擇檔案：</label>
+                    <label for="upload">選擇檔案: </label>
                     <input type="file" name="name" id="upload">
                 </div>
                 <div class="text-center input-group">
-                    <label for="intro">說明：</label>
+                    <label for="intro">說明: </label>
                     <input class="input-group-prepend" type="text" name="intro" id="intro">
                 </div>
                 <div class="text-center">

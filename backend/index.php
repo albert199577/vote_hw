@@ -1,9 +1,17 @@
 <?php include_once "../api/db.php"?>
 <?php
+$king = find('users',['account' => $_SESSION['user']]);
+
 if (!isset($_SESSION['user'])) {
     to("../index.php");
     exit();
 }
+//後台使用者判斷
+if ($king['id'] != 1) {
+    to("../index.php");
+    exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
