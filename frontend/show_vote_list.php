@@ -1,7 +1,7 @@
 <!-- <h1>列出所有的問題</h1> -->
 <link rel="stylesheet" href="./style/style.css">
-<main class="d-flex align-items-center flex-wrap justify-content-center" style="gap: 2rem">
-    <section style="flex: 1 1;max-width: 100%; align-self: start;" class="p-5 ad">
+<main class="d-flex align-items-center flex-wrap justify-content-center" style="gap: 1rem">
+    <section style="flex: 1 1;max-width: 100%; align-self: start;" class="p-3 ad">
         <p class="font-weight-bolder h3 m-4 text-center">ADVERTISEMENT</p>
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -21,7 +21,7 @@
         </div>
     </section>
     <section style="flex: 3 1;" >
-        <div class="container vote-list">
+        <div class="container vote-list mx-auto">
             <ul class='list-grid p-0'>
         <?php
         $subject = all('topics', ['status' => 1]);

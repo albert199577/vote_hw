@@ -45,17 +45,12 @@ if (!isset($_SESSION['user'])) {
 <script>
     let add_option = document.querySelector("button.add-option");
     let option_form = document.getElementsByClassName("input-group my-2")[1];
-    console.log(option_form);
-    console.log(add_option);
     add_option.addEventListener("click", e => {
         let form = add_option.parentNode;
         let new_form = option_form.cloneNode(true);
         let input = new_form.childNodes[3];
-        console.log(input);
-        input.setAttribute("value", "");
-        
+        input.value = "";
         form.insertBefore(new_form, add_option);
-        
     })
 </script>
 <!-- <script src="./app.js">

@@ -48,12 +48,11 @@
                 echo "</li>";
             } else {
             ?>
-                <li class="nav-item">
-                    <a class="nav-link ml-3 px-3 d-inline-block" href="?do=login" style="border: 1px solid #666; border-radius: 20px;">登入</a>
+                <li class="nav-item d-flex justify-content-around">
+                    <a class="nav-link ml-3 px-3 d-inline-block border rounded-pill" href="?do=login">登入</a>
+                    <a class="nav-link mx-3 px-3 d-inline-block border rounded-pill" href="?do=reg">註冊</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-3 px-3 d-inline-block" href="?do=reg"  style="border: 1px solid #666; border-radius: 20px;">註冊</a>
-                </li>
+                
         <?php
             }
         ?>
