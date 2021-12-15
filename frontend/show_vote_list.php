@@ -42,7 +42,7 @@
                 echo "<li class='vote-box row flex-column text-center'>";
                 //question
                 // echo "<img src='./icon/youtube.svg' height='50%'>";
-                echo "<div class='h-50' style='background-color:#00bbbe'></div>";
+                echo "<div class='h-50' style='background: linear-gradient(#00bbbe, #1cc2e5)'></div>";
                 if (isset($_SESSION['user'])) {
                     echo "<a class='d-inline-block' href='index.php?do=vote&id={$value['id']}'>" . $value['topic'] . "</a>";
                 } else {

@@ -1,4 +1,4 @@
-<div class="container p-5">
+<div class="container p-md-5 p-sm-3">
     <div class="mx-auto d-flex justify-content-center align-items-around" style="background-color: #054853; min-height:300px; border-radius: 20px;max-width: 500px;">
         <form action="./api/reg.php" method="POST">
         <h3 class="text-center m-5 text-white">填寫註冊資料</h3>
@@ -9,7 +9,7 @@
                     </div>
                     <input type="text" class="form-control" id="inlineFormInputGroupUsername" name="account" required>
                 </div>
-                <div class="input-group my-2">
+                <div class="input-group my-2 ">
                     <div class="input-group-prepend">
                         <div class="input-group-text">密碼</div>
                     </div>
@@ -50,7 +50,7 @@
                     <input type="email" class="form-control" id="inlineFormInputGroupUsername" name="email" required>
                 </div>
             </ul>
-            <button class="mx-auto d-block my-5" type="submit">送出</button>
+            <button class="mx-auto d-block my-5 btn btn-light" type="submit">送出</button>
         </form>
     </div>
 </div>
