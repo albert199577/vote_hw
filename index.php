@@ -16,7 +16,7 @@
         }
     </style>
 </head>
-<body class="d-flex flex-column">
+<body>
     <div class="bg-light">
         <nav class="navbar navbar-expand-lg navbar-light bg-light container">
             <a class="navbar-brand" href="index.php">

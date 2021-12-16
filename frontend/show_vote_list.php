@@ -4,7 +4,7 @@ search('topics', ['status' => 1], 'id', 'DESC');
 ?> -->
 
 <link rel="stylesheet" href="./style/style.css">
-<main class="d-flex align-items-center flex-wrap justify-content-center flex-grow-1" style="gap: 1rem">
+<main class="d-flex align-items-center flex-wrap justify-content-center" style="gap: 1rem">
     <section style="flex: 1 1;max-width: 100%; align-self: start;" class="p-3 ad">
         <p class="font-weight-bolder h3 m-4 text-center">ADVERTISEMENT</p>
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">

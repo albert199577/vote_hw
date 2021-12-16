@@ -4,7 +4,7 @@
     $rows = find("users", ["account" => $_SESSION["user"]]);
     $subject = find_vote('topics',['designer' => $rows["name"]]);
     $status = all("topics");
-    echo "<ol class='p-0 flex-grow-1'>";
+    echo "<ol class='p-0'>";
     foreach ($subject as $key => $value) {
         echo "<li class='list-group-item'>";
         //question

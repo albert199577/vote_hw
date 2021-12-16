@@ -10,7 +10,7 @@ $rows = find("users", ["account" => $_SESSION['user']]);
 
 // print_r($rows);
 ?>
-<div class="container p-4 flex-grow-1">
+<div class="container p-4">
     <div class="mx-auto d-flex justify-content-center align-items-around" style="background-color: #054853; min-height:300px; border-radius: 20px;max-width: 500px;">
         <form action="./api/edit_member_data.php" method="POST">
         <h3 class="text-center m-5 text-white">編輯會員資料</h3>
