@@ -36,8 +36,9 @@ $check_rep = find_vote('user_vote', ['user_id' => $user_id, 'topic_id' => $id]);
     <?php
     if (isset($check_rep[0])) {
         //如果此帳號已經投過票出現投票結果按鈕
-        echo "<a href='./?do=vote_result&id={$_GET['id']}'>";
-        echo "<button class='btn btn-info mt-3'>觀看投票結果</button>";
+        $id = $_GET['id'];
+        echo "<a href='?do=vote_result&id=$id'>";
+        echo "<button class='btn btn-info mt-3' type='button'>觀看投票結果</button>";
         echo "</a>";
     } else {
         echo "<input class='btn btn-info mt-3' type='submit' value='投票'>";

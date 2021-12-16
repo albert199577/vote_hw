@@ -101,7 +101,6 @@
         $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
         return $rows;
         $pdo -> exec($sql);
-        //
     }
 ?>
 
@@ -207,3 +206,22 @@ function check_rep($table, $where, $data) {
     echo $sql;
     return $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
 }
+
+?>
+
+<?php
+//依照搜尋排列
+function search($table, $where, $field, $order) {
+    global $pdo;
+    $sql_where = '';
+    foreach ($where as $key => $value) {
+        $sql_where = "`$key` = '$value'";
+    }
+    $sql = "SELECT * FROM `$table` WHERE " . $sql_where . " ORDER BY `$field` $order";
+    echo $sql;
+    // return $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+
+?>
