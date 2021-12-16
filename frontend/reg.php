@@ -1,3 +1,9 @@
+<?php 
+if (isset($_SESSION['reg_error'])) {
+    echo "<script>alert('此帳號已存在, 請重新輸入')</script>";
+    unset($_SESSION['reg_error']);
+}
+?>
 <div class="container p-md-5 p-sm-3">
     <div class="mx-auto d-flex justify-content-center align-items-around" style="background-color: #054853; min-height:300px; border-radius: 20px;max-width: 500px;">
         <form action="./api/reg.php" method="POST">

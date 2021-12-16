@@ -8,14 +8,16 @@ echo "<pre>";
 print_r($count);
 echo "</pre>";
 
-if (isset($count)) {
+if (isset($count[0])) {
     // 帳號已存在
-    echo "<script>alert('此帳號已存在')</script>";
+    $_SESSION['reg_error'] = "此帳號已存在, 請重新輸入";
+    to("../?do=reg");
 } else {
+    //帳號註冊成功
+    $_SESSION['reg_susses'] = "註冊成功, 請登入";
     insert('users',$_POST);
+    to("../?do=login");
 }
 
-
-to("../index.php");
 
 ?>

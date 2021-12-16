@@ -1,3 +1,11 @@
+<?php 
+if (isset($_SESSION['reg_susses'])) {
+    echo "<script>alert('註冊成功, 請登入')</script>";
+    unset($_SESSION['reg_susses']);
+}
+
+?>
+
 <div class="container">
     <form action="./api/check_login.php" method="post">
         <h2 class="text-center">會員登入</h2>

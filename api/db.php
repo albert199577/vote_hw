@@ -46,6 +46,7 @@
         $rows = $pdo -> query($sql) -> fetch(PDO::FETCH_ASSOC);
         return $rows;
     }
+
 //取得符合條件的資料 (管理我的投票)
     function find_vote($table, $id) {
         global $pdo;
@@ -61,8 +62,8 @@
         $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
         return $rows;
     }
-//取得符合類似條件的資料
 
+//取得符合類似條件的資料
     function find_like($table, $topic) {
         global $pdo;
         $sql = "SELECT * FROM `$table` WHERE ";
@@ -77,45 +78,10 @@
         return $rows;
     }
 
-    // find('students', ['account' => 'mack', 'password' => '1254']);
 
-    // echo "<pre>";
-    // print_r(find('students', 3));
-    // echo "</pre>";
-
-    /*
-    update function
-    1. 指定資料表 $table
-    2. 指定更新欄位 $column
-    3. 指定更新條件
-    */
-
-    // $arr1 = ['name' => '劉銘',
-    //         'birthday' => '2000-03-09',
-    //         'parent' => '許延安',
-    //         ];
-    // $where = ['major' => '商業經營科'
-    
-    //         ];
-
-
-    // $sql = "";
-    // foreach($arr1 as $key => $value) {
-    //     $sql = $sql . "`$key` = '$value', ";
-    // }
-    // echo trim($sql, ',');
-    // echo "<br>";
-    // foreach($arr1 as $key => $value) {
-    //     $sql = $sql . "`$key` = '$value', ";
-    // }
-    // echo mb_substr($sql, 0, mb_strlen($sql) - 5);
-
-//Find function
-// update('students', $arr1, $where);
-// UPDATE `users` SET `id`='[value-1]',`account`='[value-2]' WHERE 
+// UPDATE `users` SET `id`='[value-1]',`account`='[value-2]' WHERE
     function update($table, $data, $where) {
         global $pdo;
-        // $sql = "UPDATE `$table` SET "
         $sql_set = "";
         foreach($data as $key => $value) {
             $data_tmp[] = "`$key` = '$value'";
@@ -147,7 +113,6 @@ function insert($table, ...$arg) {
     global $pdo;
     $sql_set = "";
     $sql_where = "";
-    // $sql = "INSERT INTO `$table` (`id`, `uni_id`, `seat_num`, `name`) VALUES (NULL, '2', '3', '45')"
     if(isset($arg[0])) {
         if (is_array($arg)) {
             foreach ($arg as $value) {
@@ -197,7 +162,6 @@ function dd($array) {
     echo "</pre>";
 }
 
-
 ?>
 
 <?php
@@ -236,6 +200,7 @@ function q($sql) {
 ?>
 
 <?php
+
 //帳號及信箱驗證是否重複
 function check_rep($table, $where, $data) {
     global $pdo;
