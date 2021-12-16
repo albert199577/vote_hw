@@ -1,6 +1,5 @@
 <!-- <h1>列出所有的問題</h1> -->
 <!-- <?php
-
 search('topics', ['status' => 1], 'id', 'DESC');
 ?> -->
 
@@ -66,7 +65,7 @@ search('topics', ['status' => 1], 'id', 'DESC');
                 echo $value['designer'];
                 echo "</span>";
                 // 觀看人數
-                echo "<span class='d-inline-block'> 瀏覽次數 ";
+                echo "<span class='d-inline-block'><i class='far fa-eye'></i> 瀏覽次數 ";
                 echo $value['viewers'];
                 echo "</span>";
                 //看結果按鈕

@@ -19,7 +19,7 @@ $rows = find("users", ["account" => $_SESSION['user']]);
                     <div class="input-group-prepend">
                         <div class="input-group-text">帳號</div>
                     </div>
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" value="<?=$rows["account"];?>" required>
+                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" value="<?=$rows["account"];?>" disabled>
                 </div>
                 <div class="input-group my-2">
                     <div class="input-group-prepend">
