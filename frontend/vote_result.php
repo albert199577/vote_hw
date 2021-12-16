@@ -32,8 +32,6 @@
             $p = 0;
         }
         $percent =  $p . "%";
-        // echo $percent;
-        // echo 2 / 3 * 100 . "%";
         echo "<li class='d-flex justify-content-center align-items-center'>";
         echo "<div class='container d-flex justify-content-between position-relative align-items-center border  mx-3 my-2 p-0 overflow-hidden ' style='width: 300px; height: 3rem; border-radius: 1rem'>";
             echo "<p class='topics m-0 ml-3'>{$row['opt']}</p>";

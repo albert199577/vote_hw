@@ -42,7 +42,6 @@
         } else {
             $sql = $sql . "`id` = '$id'";
         }
-
         $rows = $pdo -> query($sql) -> fetch(PDO::FETCH_ASSOC);
         return $rows;
     }
