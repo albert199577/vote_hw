@@ -1,4 +1,6 @@
 <?php include_once "db.php";
+
+//backend edit ad img 
 echo "tmp_name" . $_FILES['name']['tmp_name'] . "<br>";
 echo "filename" . $_FILES['name']['name'] . "<br>";
 echo "intro" . $_POST['intro'] . "<br>";

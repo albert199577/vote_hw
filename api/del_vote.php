@@ -1,7 +1,7 @@
 <?php include_once "db.php";?>
 
 <?php
-
+//backend del vote method
 $id = $_GET['id'];
 
 del("topics", ["id" => "$id"]);

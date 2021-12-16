@@ -1,6 +1,6 @@
 
-<section class="container text-center">
-    <h1>問卷結果</h1>
+<section class="container text-center py-5">
+    <h2>問卷結果</h2>
     
     <?php
     
@@ -20,7 +20,7 @@
 
     ?>
     
-    <!-- <h1><?=$rows[0][topic];?></h1> -->
+    <p class="h5"><?=$rows[0][topic];?></p>
     
     
     <ul class="list-group row justify-content-center flex-column" style="font-size:1.25rem">
@@ -40,12 +40,15 @@
             echo "</p>";
             echo "<div class='color position-absolute m-0' style='width:$percent; background-color: rgba(175, 175, 175, .2); height: 3rem; transition: width 0.5s ease 0s;'></div>";
         echo "</div>";
-        echo "<p class='badge badge-info m-0 d-inline-block' style='flex: '>";
+        echo "<p class='badge badge-info m-0 d-inline-block'>";
         echo $row['count'] . "票";
         echo "</p>";
         echo "</li>";
     }
     ?>
+        <li style="list-style: none;">
+            <p class="m-0 h6">總投票數 <?=$count[0]["總計"]?></p>
+        </li>
         <li class="row justify-content-center align-items-center">
             <a href="index.php" class="mx-auto btn btn-info mt-3">回首頁</a>
         </li>

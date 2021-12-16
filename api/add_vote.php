@@ -1,6 +1,6 @@
 <?php include_once "db.php";
 
-
+//frontend add vote method
 $rows = find("users", ["account" => $_SESSION["user"]]);
 
 insert("topics", ["topic" => $_POST["topics"], "designer" => $rows["name"]]);

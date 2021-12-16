@@ -4,9 +4,14 @@ if (isset($_SESSION['reg_susses'])) {
     unset($_SESSION['reg_susses']);
 }
 
+if (isset($_SESSION['error'])) {
+    echo "<script>alert('帳號密碼錯誤, 請重新輸入')</script>";
+    unset($_SESSION['error']);
+}
+
 ?>
 
-<div class="container">
+<div class="container flex-grow-1 my-5">
     <form action="./api/check_login.php" method="post">
         <h2 class="text-center">會員登入</h2>
         <li class="row justify-content-center align-items-center mx-3 flex-nowrap">

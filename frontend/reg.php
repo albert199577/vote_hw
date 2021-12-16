@@ -4,7 +4,7 @@ if (isset($_SESSION['reg_error'])) {
     unset($_SESSION['reg_error']);
 }
 ?>
-<div class="container p-md-5 p-sm-3">
+<div class="container p-md-5 p-sm-3 flex-grow-1">
     <div class="mx-auto d-flex justify-content-center align-items-around" style="background-color: #054853; min-height:300px; border-radius: 20px;max-width: 500px;">
         <form action="./api/reg.php" method="POST">
         <h3 class="text-center m-5 text-white">填寫註冊資料</h3>

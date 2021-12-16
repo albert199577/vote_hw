@@ -1,8 +1,7 @@
 <?php include_once "db.php";
 
-
+//frontend reg check method
 $account = $_POST['account'];
-
 $count = check_rep("users", "account", "$account");
 echo "<pre>";
 print_r($count);
@@ -18,6 +17,5 @@ if (isset($count[0])) {
     insert('users',$_POST);
     to("../?do=login");
 }
-
 
 ?>

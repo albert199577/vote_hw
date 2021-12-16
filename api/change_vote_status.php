@@ -1,5 +1,6 @@
 <?php include_once "db.php";
 
+//backend change vote release status
 $id = $_GET['id'];
 $vote = find('topics', $id);
 echo "<pre>";
