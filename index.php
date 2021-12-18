@@ -65,7 +65,6 @@
     
     <section class="back-img"> 
         <h3>準備好製作第一個投票了嗎？</h3>
-        
         <a href="?do=<?=isset($_SESSION['user']) ? 'add_vote' : 'login';?>">
             <button class="start btn btn-outline-light mt-3">現在開始</button>
         </a>

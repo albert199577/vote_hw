@@ -1,5 +1,5 @@
 
-<section class="container text-center py-5">
+<section class="container text-center py-5" style="min-height: 506px">
     <h2>問卷結果</h2>
     
     <?php
@@ -20,7 +20,7 @@
 
     ?>
     
-    <p class="h5"><?=$rows[0][topic];?></p>
+    <p class="h5"><?=$rows[0]['topic'];?></p>
     
     
     <ul class="list-group row justify-content-center flex-column" style="font-size:1.25rem">

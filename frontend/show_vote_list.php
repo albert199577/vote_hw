@@ -5,7 +5,7 @@ search('topics', ['status' => 1], 'id', 'DESC');
 
 <link rel="stylesheet" href="./style/style.css">
 <main class="d-flex align-items-center flex-wrap justify-content-center" style="gap: 1rem">
-    <section style="flex: 1 1;max-width: 100%; align-self: start;" class="p-3 ad">
+    <section style="flex: 1 1;max-width: 100%; align-self: start;" class="p-3 ad ml-5">
         <p class="font-weight-bolder h3 m-4 text-center">ADVERTISEMENT</p>
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -42,13 +42,22 @@ search('topics', ['status' => 1], 'id', 'DESC');
         }
         ?>
         <?php
+        // print_r($subject);
         foreach ($subject as $key => $value) {
-            // print_r($value);
             if (rows('options', ['topic_id' => $value['id']])) {
                 echo "<li class='vote-box row flex-column text-center'>";
                 //question
-                // echo "<img src='./icon/youtube.svg' height='50%'>";
-                echo "<div class='h-50' style='background: linear-gradient(#00bbbe, #1cc2e5)'></div>";
+                if (!empty($value['img_name'])) {
+                    $file = "./vote_img/" . $value['img_name'];
+                } else {
+                    $file = "";
+                }
+                if (file_exists($file)) {
+                    echo "<img src='$file' height='50%'>";
+                } else {
+                    echo "<div class='h-50' style='background: linear-gradient(#00bbbe, #1cc2e5)'></div>";
+                    // echo "<img src='./icon/youtube.svg' height='50%'>";
+                }
                 if (isset($_SESSION['user'])) {
                     echo "<a class='d-inline-block' href='./api/viewers.php?id={$value['id']}'>" . $value['topic'] . "</a>";
                 } else {

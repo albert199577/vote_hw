@@ -11,7 +11,7 @@ if (isset($_SESSION['error'])) {
 
 ?>
 
-<div class="container my-5">
+<div class="container my-5" style="min-height: calc(1080px - 74px - 200px - 400px)">
     <form action="./api/check_login.php" method="post">
         <h2 class="text-center">會員登入</h2>
         <li class="row justify-content-center align-items-center mx-3 flex-nowrap">
