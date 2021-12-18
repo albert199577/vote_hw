@@ -53,7 +53,9 @@ search('topics', ['status' => 1], 'id', 'DESC');
                     $file = "";
                 }
                 if (file_exists($file)) {
-                    echo "<img src='$file' height='50%'>";
+                    echo "<div class='h-50'>";
+                    echo "<img src='$file' height='100%' width: 'auto'>";
+                    echo "</div>";
                 } else {
                     echo "<div class='h-50' style='background: linear-gradient(#00bbbe, #1cc2e5)'></div>";
                     // echo "<img src='./icon/youtube.svg' height='50%'>";
