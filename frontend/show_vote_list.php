@@ -137,7 +137,7 @@ search('topics', ['status' => 1], 'id', 'DESC');
                                         $file = "";
                                     }
                                     if (file_exists($file)) {
-                                        echo "<div class='h-50'>";
+                                        echo "<div class='h-50 text-center'>";
                                         echo "<img src='$file' height='100%' width: 'auto'>";
                                         echo "</div>";
                                     } else {

@@ -13,7 +13,7 @@ if (!isset($_SESSION['user'])) {
             <ul class="p-0">
                 <div class="input-group-prepend text-center bg-light my-2">
                     <label for="upload"></label>
-                    <input type="file" name="name" id="upload" accept="image/jpeg" display="none">
+                    <input class="form-control" type="file" name="name" id="upload" accept="image/jpeg" display="none">
                 </div>
                 <div class="input-group my-2">
                     <div class="input-group-prepend">
