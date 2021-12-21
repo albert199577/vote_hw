@@ -11,8 +11,9 @@ if (!isset($_SESSION['user'])) {
         <form action="./api/add_vote.php" method="POST" enctype="multipart/form-data">
         <h3 class="text-center m-5 text-white">建立投票</h3> 
             <ul class="p-0">
-                <div class="text-center bg-light">
-                    <input type="file" name="name" id="upload" accept="image/jpeg">
+                <div class="input-group-prepend text-center bg-light my-2">
+                    <label for="upload"></label>
+                    <input type="file" name="name" id="upload" accept="image/jpeg" display="none">
                 </div>
                 <div class="input-group my-2">
                     <div class="input-group-prepend">

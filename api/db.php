@@ -218,8 +218,8 @@ function search($table, $where, $field, $order) {
         $sql_where = "`$key` = '$value'";
     }
     $sql = "SELECT * FROM `$table` WHERE " . $sql_where . " ORDER BY `$field` $order";
-    echo $sql;
-    // return $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
+    // echo $sql;
+    return $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
 }
 
 

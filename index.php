@@ -1,4 +1,10 @@
 <?php include_once "./api/db.php"; ?>
+<?php
+
+$king = find('users',['account' => $_SESSION['user']]);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +41,11 @@
             <?php
             if (isset($_SESSION['user'])) {
                 $rows = find("users", ["account" => $_SESSION["user"]]);
+                if ($king['id'] == 1) {
+                echo "<li class='nav-item '>";
+                    echo "<a class='nav-link' href='./backend/index.php'>後台管理</a>";
+                echo "</li>";
+                } 
                 echo "<li class='nav-item '>";
                     echo "<a class='nav-link'>{$rows["name"]}</a>";
                 echo "</li>";

@@ -38,6 +38,9 @@ if ($king['id'] != 1) {
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item">
+                <a class="nav-link" href="../index.php">回前台</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="?do=member">會員管理</a>
             </li>
             <li class="nav-item">
