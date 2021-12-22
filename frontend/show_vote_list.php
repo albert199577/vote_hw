@@ -1,7 +1,3 @@
-<!-- <h1>列出所有的問題</h1> -->
-<!-- <?php
-search('topics', ['status' => 1], 'id', 'DESC');
-?> -->
 
 <link rel="stylesheet" href="./style/style.css">
 <main class="d-flex align-items-center flex-wrap justify-content-center" style="gap: 1rem">
@@ -46,8 +42,10 @@ search('topics', ['status' => 1], 'id', 'DESC');
                         // $subject = all('topics', ['status' => 1]);
                         if (isset($_GET['keyword'])) {
                             $keyword = $_GET['keyword'];
-                            $find_like = find_like('topics', ['topic' => $keyword]);
-                            $subject = $find_like;
+                            if ($keyword != "") {
+                                $find_like = find_like('topics', ['topic' => $keyword]);
+                                $subject = $find_like;
+                            }
                         }
                         if (count($subject) == 0) {
                             echo "<li class='mt-5' style='list-style: none; text-align: center'>";
@@ -115,8 +113,10 @@ search('topics', ['status' => 1], 'id', 'DESC');
                             $subject = search('topics', ['status' => 1], 'viewers', 'DESC');
                             if (isset($_GET['keyword'])) {
                                 $keyword = $_GET['keyword'];
-                                $find_like = find_like('topics', ['topic' => $keyword]);
-                                $subject = $find_like;
+                                if ($keyword != "") {
+                                    $find_like = find_like('topics', ['topic' => $keyword]);
+                                    $subject = $find_like;
+                                }
                             }
                             if (count($subject) == 0) {
                                 echo "<li class='mt-5' style='list-style: none; text-align: center'>";
@@ -184,8 +184,10 @@ search('topics', ['status' => 1], 'id', 'DESC');
                             $subject = search('topics', ['status' => 1], 'viewers', 'DESC');
                             if (isset($_GET['keyword'])) {
                                 $keyword = $_GET['keyword'];
-                                $find_like = find_like('topics', ['topic' => $keyword]);
-                                $subject = $find_like;
+                                if ($keyword != "") {
+                                    $find_like = find_like('topics', ['topic' => $keyword]);
+                                    $subject = $find_like;
+                                }
                             }
                             if (count($subject) == 0) {
                                 echo "<li class='mt-5' style='list-style: none; text-align: center'>";

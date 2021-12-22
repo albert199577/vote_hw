@@ -36,8 +36,10 @@ foreach ($subject as $key => $value) {
 }
 
 ?>
-<a class="mt-5 d-inline-block mx-auto" href="?do=add_subject_form">
-    <button type='button' class='btn btn-secondary'><i class='fas fa-plus'></i></button>
-</a>
+<li class="list-group">
+    <a class="mt-5 d-inline-block mx-auto" href="?do=add_subject_form">
+        <button type='button' class='btn btn-secondary'><i class='fas fa-plus'></i></button>
+    </a>
+</li>
 
 
