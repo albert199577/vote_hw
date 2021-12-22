@@ -1,9 +1,10 @@
-    <?php
-    $rows = find("users", ["account" => $_SESSION["user"]]);
-    $subject = find_vote('topics',['designer' => $rows["name"]]);
-    $status = all("topics");
-    ?>
+<?php
+$rows = find("users", ["account" => $_SESSION["user"]]);
+$subject = find_vote('topics',['designer' => $rows["name"]]);
+$status = all("topics");
+?>
 
+<h3 class="text-center my-5">我的投票</h3> 
 <div class="container my-5" style="min-height: calc(1080px - 74px - 200px - 400px)">
 <?php
 if (count($subject) == 0) {

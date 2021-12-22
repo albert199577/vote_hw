@@ -6,15 +6,19 @@ if (!isset($_SESSION['user'])) {
 // print_r($rows);
 ?>
 
-<div class="container p-5">
+<div class="container p-3 p-md-5">
     <div class="mx-auto d-flex justify-content-center align-items-around" style="background-color: #054853; min-height:300px; border-radius: 20px;max-width: 500px;">
         <form action="./api/add_vote.php" method="POST" enctype="multipart/form-data">
         <h3 class="text-center m-5 text-white">建立投票</h3> 
-            <ul class="p-0">
+            <ul class="p-3">
                 <div class="input-group-prepend text-center bg-light my-2">
                     <label for="upload"></label>
                     <input class="form-control" type="file" name="name" id="upload" accept="image/jpeg" display="none">
                 </div>
+                <!-- <div class='custom-file mx-auto d-block mb-2'>
+                    <label for="upload" class='custom-file-label'>投票標題圖片</label>
+                    <input class="custom-file-input" type="file" name="name" id="upload" accept="image/jpeg">
+                </div> -->
                 <div class="input-group my-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text">主旨</div>

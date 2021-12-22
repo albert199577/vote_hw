@@ -1,6 +1,7 @@
+
+<h2 class="m-4 text-center">所有會員</h2>
 <?php 
 $users = all('users');
-echo "<h2>目前會員</h2>";
 echo "<ol class='p-0'>";
 // echo "<pre>";
 // print_r($users);

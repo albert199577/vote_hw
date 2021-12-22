@@ -1,7 +1,9 @@
 <?php include_once "./api/db.php"; ?>
 <?php
 
-$king = find('users',['account' => $_SESSION['user']]);
+if (isset($_SESSION['user'])) {
+    $king = find('users',['account' => $_SESSION['user']]);
+}
 
 
 ?>

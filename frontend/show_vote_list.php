@@ -79,12 +79,12 @@ search('topics', ['status' => 1], 'id', 'DESC');
                                 if (isset($_SESSION['user'])) {
                                     echo "<a class='d-block my-1' style='font-weight: 700' href='./api/viewers.php?id={$value['id']}'>" . $value['topic'] . "</a>";
                                 } else {
-                                    echo "<span class='d-inline-block text-center'>" . $value['topic']  . "</span>";
+                                    echo "<span class='d-inline-block text-center my-1' style='font-weight: 700'>" . $value['topic']  . "</span>";
                                 }
                                 //總投票顯示
                                 $count = q("select sum(`count`) as '總計' from `options` where `topic_id` = '{$value['id']}'");
                                 // dd($count);
-                                echo "<p>";
+                                echo "<p class='m-0 py-2'>";
                                 echo "投票總次數 " . $count[0]['總計'];
                                 echo "</p>";
                                 // 投票設計者

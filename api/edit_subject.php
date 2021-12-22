@@ -13,6 +13,9 @@ $opt_id = $_POST['opt_id'];
 echo "<pre>";
 print_r($options);
 echo "</pre>";
+echo "<pre>";
+print_r($opt_id);
+echo "</pre>";
 
 echo "<br>";
 
@@ -20,10 +23,7 @@ foreach ($options as $key => $opt) {
     // echo $key;
     // if (array_key_exists($key, $opt_id)) {
     // 判斷選項是否為空值 ， 有的話加入ＤＢ 沒有的話不➕
-
-    update('options', ['opt' => $opt], ['id' => $opt_id[$key]]);
-
-
+        update('options', ['opt' => $opt], ['id' => $opt_id[$key]]);
     // } else {
     //     insert('options', ['opt' => $opt, 'topic_id' => $topic_id]);
     // }
@@ -33,5 +33,5 @@ foreach ($options as $key => $opt) {
 
 del('options', ['opt' => ''], ['topic_id' => $topic_id]);
 
-// to("../backend/index.php");
+to("../index.php?do=edit_subject&id={$topic_id}");
 ?>

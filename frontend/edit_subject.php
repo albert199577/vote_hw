@@ -25,8 +25,30 @@ $option = all('options', ['topic_id' => $_GET['id']]);
                     echo "</div>";
                 }
                 ?>
+                <!-- <button type="button" class="add-option d-block mx-auto btn btn-outline-light"><i class="fas fa-plus"></i></button> -->
             </ul>
             <button class="mx-auto d-block my-3 btn btn-light" type="submit">送出</button>
         </form>
     </div>
 </div>
+<!-- <script>
+    let add_option = document.querySelector("button.add-option");
+    let option_form = document.getElementsByClassName("input-group my-2")[1];
+    let all_option = document.getElementsByClassName("input-group my-2");
+    console.log(all_option);
+    add_option.addEventListener("click", e => {
+        let form = add_option.parentNode;
+        console.log(form);
+        let new_form = option_form.cloneNode(true);
+        console.log(new_form);
+        let input = new_form.childNodes[1];
+        console.log(input);
+        input.value = "";
+        new_form.childNodes[2].value ="";
+        console.log(new_form);
+
+        // if (all_option.length < 7) {
+            form.insertBefore(new_form, add_option);
+        // }
+    })
+</script> -->

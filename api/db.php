@@ -98,9 +98,9 @@
         // echo "<br>";
         $sql = "UPDATE `$table` SET $sql_set WHERE $sql_where";
         echo $sql;
-        $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
-        return $rows;
+        // $rows = $pdo -> query($sql) -> fetchAll(PDO::FETCH_ASSOC);
         $pdo -> exec($sql);
+        // return $rows;
     }
 ?>
 

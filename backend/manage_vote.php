@@ -1,4 +1,4 @@
-<h1>列出所有的問題</h1>
+<h2 class="m-4 text-center">所有投票</h2>
 
 <?php
 

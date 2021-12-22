@@ -20,16 +20,19 @@
         <form action="./api/save_vote.php?id=<?=$id?>" method="post" style="min-width: 300px">
             <ul class="p-0">
                 <?php
+                if (isset($check_rep[0])) {
+                        echo "<p class='text-center text-info'>您已經投過票囉</p>";
+                    }
                 foreach ($options as $key => $opt) {
-                    echo "<label class='list-group-item list-group-item-action list-group-item-info'>";
+                    echo "<li class='list-group-item my-2 list-group-item-info rounded-pill'>";
                     if (isset($check_rep[0])) {
                         //如果此帳號已經投過票就不讓他投
-                        echo "<input type='radio' name='opt' value='{$opt['id']}' disabled>";
+                        echo "<input class='m-2' type='radio' name='opt' value='{$opt['id']}' disabled>";
                     } else {
-                        echo "<input type='radio' name='opt' value='{$opt['id']}' required>";
+                        echo "<input class='m-2' type='radio' name='opt' value='{$opt['id']}' required>";
                     }
                     echo $opt['opt'];
-                    echo "</label>";
+                    echo "</li>";
 
                 }
                 ?>
