@@ -11,16 +11,16 @@ if (isset($_SESSION['error'])) {
 
 ?>
 
-<div class="container my-5" style="min-height: calc(1080px - 74px - 200px - 400px)">
+<div class="container my-5" style="min-height: calc(1080px - 74px - 200px - 393px)">
     <form action="./api/check_login.php" method="post">
-        <h2 class="text-center">會員登入</h2>
-        <li class="row justify-content-center align-items-center mx-3 flex-nowrap">
-            <label class="col-md-1 my-0 w-25 text-center" for="">帳號</label>
-            <input class="col-md-2 border rounded-pill" type="text" name="account" required>
+        <h2 class="text-center m-5">會員登入</h2>
+        <li class="row justify-content-center align-items-center mx-3 flex-nowrap" style="height: 3rem">
+            <label class="mx-md-4 mr-3 my-0 text-center" for="">帳號</label>
+            <input class="px-3 border rounded-pill" style="height: 2.2rem; width: 200px" type="text" name="account" required>
         </li>
-        <li class="row justify-content-center align-items-center mx-3 flex-nowrap mt-2">
-            <label class="col-md-1 my-0 w-25 text-center" for="">密碼</label>
-            <input class="col-md-2 border rounded-pill" type="password" name="password" required>
+        <li class="row justify-content-center align-items-center mx-3 flex-nowrap mt-2" style="height: 3rem">
+            <label class="mx-md-4 mr-3 my-0 text-center" for="">密碼</label>
+            <input class="px-3 border rounded-pill" style="height: 2.2rem; width: 200px" type="password" name="password" required>
         </li>
         <li class="row justify-content-center align-items-center">
         <?php

@@ -21,11 +21,14 @@
             <ul class="p-0">
                 <?php
                 if (isset($check_rep[0])) {
-                        echo "<p class='text-center text-info'>您已經投過票囉</p>";
-                    }
+                    echo "<p class='text-center text-info'>您已經投過票囉</p>";
+                } else if ($_SESSION['user'] == "") {
+                    echo "<p class='text-center text-info'>登入後開始投票</p>";
+
+                }
                 foreach ($options as $key => $opt) {
                     echo "<li class='list-group-item my-2 list-group-item-info rounded-pill'>";
-                    if (isset($check_rep[0])) {
+                    if (isset($check_rep[0]) || $_SESSION['user'] == "") {
                         //如果此帳號已經投過票就不讓他投
                         echo "<input class='m-2' type='radio' name='opt' value='{$opt['id']}' disabled>";
                     } else {
@@ -39,11 +42,16 @@
             </ul>
             <li class="p-0 d-flex justify-content-center mb-4" style="list-style: none;">
             <?php
+        
             if (isset($check_rep[0])) {
                 //如果此帳號已經投過票出現投票結果按鈕
                 $id = $_GET['id'];
                 echo "<a href='?do=vote_result&id=$id'>";
                 echo "<button class='btn btn-info mt-3 mr-2' type='button'>觀看投票結果</button>";
+                echo "</a>";
+            } else if($_SESSION['user'] == "") {
+                echo "<a href='?do=login'>";
+                echo "<button class='btn btn-info mt-3 mr-2' type='button'>登入</button>";
                 echo "</a>";
             } else {
                 echo "<button class='btn btn-info mt-3 mr-2' type='submit'>投票</button>";

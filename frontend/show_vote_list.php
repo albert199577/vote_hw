@@ -66,19 +66,20 @@
                                     $file = "";
                                 }
                                 if (file_exists($file)) {
-                                    echo "<div class='h-50 text-center'>";
+                                    echo "<a class='d-block h-50' href='./api/viewers.php?id={$value['id']}'>";
+                                    echo "<div class='h-100 text-center'>";
                                     echo "<img src='$file' height='100%' width: 'auto'>";
                                     echo "</div>";
+                                    echo "</a>";
                                 } else {
-                                    echo "<div class='h-50' style='background: linear-gradient(#00bbbe, #1cc2e5)'></div>";
-                                    // echo "<img src='./icon/youtube.svg' height='50%'>";
+                                    echo "<a class='d-block h-50'href='./api/viewers.php?id={$value['id']}'>";
+                                    echo "<div class='h-100' style='background: linear-gradient(#00bbbe, #1cc2e5)'>";
+                                    echo "</div>";
+                                    echo "</a>";
+
                                 }
                                 echo "<section class='h-50 px-3'>";
-                                if (isset($_SESSION['user'])) {
-                                    echo "<a class='d-block my-1' style='font-weight: 700' href='./api/viewers.php?id={$value['id']}'>" . $value['topic'] . "</a>";
-                                } else {
-                                    echo "<span class='d-inline-block text-center my-1' style='font-weight: 700'>" . $value['topic']  . "</span>";
-                                }
+                                echo "<a class='d-block my-1' style='font-weight: 700' href='./api/viewers.php?id={$value['id']}'>" . $value['topic'] . "</a>";
                                 //總投票顯示
                                 $count = q("select sum(`count`) as '總計' from `options` where `topic_id` = '{$value['id']}'");
                                 // dd($count);
@@ -137,19 +138,20 @@
                                         $file = "";
                                     }
                                     if (file_exists($file)) {
-                                        echo "<div class='h-50 text-center'>";
+                                        echo "<a class='d-block h-50' href='./api/viewers.php?id={$value['id']}'>";
+                                        echo "<div class='h-100 text-center'>";
                                         echo "<img src='$file' height='100%' width: 'auto'>";
                                         echo "</div>";
+                                        echo "</a>";
                                     } else {
-                                        echo "<div class='h-50' style='background: linear-gradient(#00bbbe, #1cc2e5)'></div>";
-                                        // echo "<img src='./icon/youtube.svg' height='50%'>";
+                                        echo "<a class='d-block h-50'href='./api/viewers.php?id={$value['id']}'>";
+                                        echo "<div class='h-100' style='background: linear-gradient(#00bbbe, #1cc2e5)'>";
+                                        echo "</div>";
+                                        echo "</a>";
+    
                                     }
                                     echo "<section class='h-50 px-3'>";
-                                    if (isset($_SESSION['user'])) {
-                                        echo "<a class='d-block my-1' style='font-weight: 700' href='./api/viewers.php?id={$value['id']}'>" . $value['topic'] . "</a>";
-                                    } else {
-                                        echo "<span class='d-inline-block text-center'>" . $value['topic']  . "</span>";
-                                    }
+                                    echo "<a class='d-block my-1' style='font-weight: 700' href='./api/viewers.php?id={$value['id']}'>" . $value['topic'] . "</a>";
                                     //總投票顯示
                                     $count = q("select sum(`count`) as '總計' from `options` where `topic_id` = '{$value['id']}'");
                                     // dd($count);
@@ -182,6 +184,7 @@
                             <!-- 點閱率最高 -->
                             <?php
                             $subject = search('topics', ['status' => 1], 'viewers', 'DESC');
+                            // print_r($subject);
                             if (isset($_GET['keyword'])) {
                                 $keyword = $_GET['keyword'];
                                 if ($keyword != "") {
@@ -208,19 +211,20 @@
                                         $file = "";
                                     }
                                     if (file_exists($file)) {
-                                        echo "<div class='h-50 text-center'>";
+                                        echo "<a class='d-block h-50' href='./api/viewers.php?id={$value['id']}'>";
+                                        echo "<div class='h-100 text-center'>";
                                         echo "<img src='$file' height='100%' width: 'auto'>";
                                         echo "</div>";
+                                        echo "</a>";
                                     } else {
-                                        echo "<div class='h-50' style='background: linear-gradient(#00bbbe, #1cc2e5)'></div>";
-                                        // echo "<img src='./icon/youtube.svg' height='50%'>";
+                                        echo "<a class='d-block h-50'href='./api/viewers.php?id={$value['id']}'>";
+                                        echo "<div class='h-100' style='background: linear-gradient(#00bbbe, #1cc2e5)'>";
+                                        echo "</div>";
+                                        echo "</a>";
+    
                                     }
                                     echo "<section class='h-50 px-3'>";
-                                    if (isset($_SESSION['user'])) {
-                                        echo "<a class='d-block my-1' style='font-weight: 700' href='./api/viewers.php?id={$value['id']}'>" . $value['topic'] . "</a>";
-                                    } else {
-                                        echo "<span class='d-inline-block text-center'>" . $value['topic']  . "</span>";
-                                    }
+                                    echo "<a class='d-block my-1' style='font-weight: 700' href='./api/viewers.php?id={$value['id']}'>" . $value['topic'] . "</a>";
                                     //總投票顯示
                                     $count = q("select sum(`count`) as '總計' from `options` where `topic_id` = '{$value['id']}'");
                                     // dd($count);

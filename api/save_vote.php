@@ -4,7 +4,7 @@ include_once "db.php";
 //紀錄帳號與投票項目資料表連結 以判斷是否投票
 $topic_id = $_GET['id'];
 $user_id = (find('users', ['account' => $_SESSION['user']]))['id'];
-// insert('user_vote', ['user_id' => $user_id, 'topic_id' => $topic_id]);
+insert('user_vote', ['user_id' => $user_id, 'topic_id' => $topic_id]);
 
 
 //在選項加上投票數
