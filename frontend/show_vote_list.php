@@ -110,7 +110,7 @@
                         <ul class='list-grid p-0'>
                             <!-- 熱門投票 -->
                             <?php
-                            $subject = search('topics', ['status' => 1], 'viewers', 'DESC');
+                            $subject = search('topics', ['status' => 1], 'vote_sum', 'DESC');
                             if (isset($_GET['keyword'])) {
                                 $keyword = $_GET['keyword'];
                                 if ($keyword != "") {

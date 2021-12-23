@@ -26,8 +26,13 @@ $option = all('options', ['topic_id' => $_GET['id']]);
                 }
                 ?>
                 <!-- <button type="button" class="add-option d-block mx-auto btn btn-outline-light"><i class="fas fa-plus"></i></button> -->
+                <li class="p-0 d-flex justify-content-center mb-4" style="list-style: none;">
+                    <a href="?do=manage_vote">
+                        <button class="btn btn-light mt-3 mr-2 " type="button">回上一頁</button>
+                    </a>
+                    <button class="d-inline-block mt-3 ml-2 btn btn-light" type="submit">送出</button>
+                </li>
             </ul>
-            <button class="mx-auto d-block my-3 btn btn-light" type="submit">送出</button>
         </form>
     </div>
 </div>
