@@ -65,10 +65,12 @@
                                 } else {
                                     $file = "";
                                 }
+                                
+
                                 if (file_exists($file)) {
                                     echo "<a class='d-block h-50' href='./api/viewers.php?id={$value['id']}'>";
-                                    echo "<div class='h-100 text-center'>";
-                                    echo "<img src='$file' height='100%' width: 'auto'>";
+                                    echo "<div class='h-100 text-center' style='background: url($file); background-position: center; background-size: 100% auto; background-repeat: no-repeat;'>";
+                                    // echo "<img src='$file' height='100%' width: 'auto'>";
                                     echo "</div>";
                                     echo "</a>";
                                 } else {
@@ -139,8 +141,8 @@
                                     }
                                     if (file_exists($file)) {
                                         echo "<a class='d-block h-50' href='./api/viewers.php?id={$value['id']}'>";
-                                        echo "<div class='h-100 text-center'>";
-                                        echo "<img src='$file' height='100%' width: 'auto'>";
+                                        echo "<div class='h-100 text-center' style='background: url($file); background-position: center; background-size: 100% auto; background-repeat: no-repeat;'>";
+                                    // echo "<img src='$file' height='100%' width: 'auto'>";
                                         echo "</div>";
                                         echo "</a>";
                                     } else {
@@ -212,8 +214,8 @@
                                     }
                                     if (file_exists($file)) {
                                         echo "<a class='d-block h-50' href='./api/viewers.php?id={$value['id']}'>";
-                                        echo "<div class='h-100 text-center'>";
-                                        echo "<img src='$file' height='100%' width: 'auto'>";
+                                        echo "<div class='h-100 text-center' style='background: url($file); background-position: center; background-size: 100% auto; background-repeat: no-repeat;'>";
+                                    // echo "<img src='$file' height='100%' width: 'auto'>";
                                         echo "</div>";
                                         echo "</a>";
                                     } else {
